@@ -5,7 +5,7 @@ const auth = require("../middlewares/usuarioAuth")
 
 router.get("/usuarios/cadastrar", UsuarioController.cadastrar);
 router.get("/usuarios",auth, UsuarioController.relatorio);
-router.post("/usuarios",auth, UsuarioController.salvar);
+router.post("/usuarios", UsuarioController.salvar);
 router.get("/usuarios/:email/remover",auth, UsuarioController.remover);
 router.get("/usuarios/:email/atualizar",auth, UsuarioController.atualizar);
 router.post("/usuarios/atualizar",auth, UsuarioController.atualizarPost);

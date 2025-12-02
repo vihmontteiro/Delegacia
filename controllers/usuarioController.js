@@ -50,6 +50,8 @@ class UsuarioController {
         const hash = bcryptjs.hashSync(senha, salt);
         const novoUsuario = new Usuario({ email, nome, senha:hash });
         await novoUsuario.save();
+        const usuario = await Usuario.findOne({ email });
+        console.log(usuario);
         res.redirect("/usuarios?s=1");
     }
 
