@@ -31,15 +31,15 @@
                 </tr>
             </thead>
             <tbody>
-                <% ocorrencias.forEach(o => { %>
+                <% ocorrencias.forEach(ocorrencia => { %>
                     <tr>
-                        <td><%= o.numero %></td>
-                        <td><%= o.descricao %></td>
-                        <td><%= o.data %></td>
-                        <td><%= o.local %></td>
-                        <td><a href="/ocorrencias/<%= o.numero %>" class="btn btn-info">Detalhar</a></td>
-                        <<td><a href="/ocorrencias/<%= o.numero %>/atualizar" class="btn btn-warning">Atualizar</a></td>
-                        <td><a href="/ocorrencias/<%= o.numero %>/remover" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger">Excluir</a></td>
+                        <td><%= ocorrencia.numero %></td>
+                        <td><%= ocorrencia.descricao %></td>
+                        <td><%= ocorrencia.data %></td>
+                        <td><%= ocorrencia.local %></td>
+                        <td><a href="/ocorrencias/<%= ocorrencia.numero %>" class="btn btn-info">Detalhar</a></td>
+                        <td><a href="/ocorrencias/<%= ocorrencia.numero %>/atualizar" class="btn btn-warning">Atualizar</a></td>
+                        <td><a href="/ocorrencias/<%= ocorrencia.numero %>/remover" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger">Excluir</a></td>
 
                     </tr>
                 <% }) %>
