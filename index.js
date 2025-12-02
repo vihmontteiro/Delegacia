@@ -25,7 +25,6 @@ mongoose.connect(process.env.MONGO_URI);
 const policialRoutes = require("./routes/policialRoutes");
 const ocorrenciaRoutes = require("./routes/ocorrenciaRoutes");
 const usuarioRoutes = require("./routes/usuarioRoutes");
-const Usuario = require("./models/Usuario");
 
 
 app.get("/", (req, res) => {
