@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detalhamento de policiais</title>
+    
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+    <div class="container">
+
+    <% if (policial != null ) { %>
+        <div> 
+            <b>Registro: </b> <%= policial.registro %>
+        </div>
+        <div>
+            <b>Nome: </b> <%= policial.nome %>
+        </div>
+        <b>Idade: </b> <%= policial.idade %>
+
+        <% } else { %>
+            <h2 style="color: red;">Policial não encontrado!</h2>
+        <% } %>
+
+        <br>
+
+        <a href="/policiais" class="btn btn-primary"> Voltar</a>
+
+    </div>
+
+    <%-include ("../partials/rodape.ejs") %>
+
+</body>
+</html>

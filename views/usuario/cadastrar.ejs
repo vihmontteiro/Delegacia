@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuario</title>
+</head>
+<body>
+    <%- include("../partials/cabecalhoSemMenu.ejs") %>
+
+    <div class="container">
+
+        <h2><%= usuario._id ? "Atualizar" : "Cadastrar" %> Usuario</h2>
+
+    <form action="<%= usuario._id ? "/usuarios/atualizar" : "/usuarios" %>" method="post">
+        <input type="hidden" name="_id"  value="<%=usuario._id %>">
+
+        <div>
+            <label class="form-label"> Email:</label>
+            <input value="<%=usuario.email %>" class="form-control" type="email" name="email" required><br>
+        </div>
+
+        <div>
+            <label class="form-label"> Nome:</label>
+            <input value="<%=usuario.nome %>" class="form-control" type="text" name="nome" required><br>
+        </div>
+
+        <div>
+            <label class="form-label"> Senha:</label>
+            <input value="<%=usuario.senha %>" class="form-control" type="password" name="senha" required><br>
+        </div>
+        
+        <br>
+    <div>
+        
+        <button type="submit" class="btn btn-success"> <%= usuario._id ? "Atualizar" : "Cadastrar" %> </button>
+        <a class="btn btn-primary" href="/usuarios/login">Já possui conta</a>
+        <a href="/" class="btn btn-primary"> Voltar</a>
+        
+    </div>
+
+        <%-include ("../partials/rodape.ejs") %>
+    
+    </div>
+</body>
+</html>
+
+
+

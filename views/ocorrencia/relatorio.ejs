@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Ocorrências</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+
+    <div class="container">
+        <% if (status == "1") { %>
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                Ocorrência cadastrada com <b>sucesso!</b>
+            </div>
+        <% } %>
+
+        <h2>Relatório de Ocorrências</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Descrição</th>
+                    <th>Data</th>
+                    <th>Local</th>
+                    <th>Detalhar</th>
+                    <th>Atualizar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% ocorrencias.forEach(o => { %>
+                    <tr>
+                        <td><%= o.numero %></td>
+                        <td><%= o.descricao %></td>
+                        <td><%= o.data %></td>
+                        <td><%= o.local %></td>
+                        <td><a href="/ocorrencias/<%= o.numero %>" class="btn btn-info">Detalhar</a></td>
+                        <<td><a href="/ocorrencias/<%= o.numero %>/atualizar" class="btn btn-warning">Atualizar</a></td>
+                        <td><a href="/ocorrencias/<%= o.numero %>/remover" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger">Excluir</a></td>
+
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+
+        <a href="/" class="btn btn-primary"> Voltar</a>
+        <a href="/ocorrencias/cadastrar" class="btn btn-success">Cadastrar</a>
+
+    </div>
+
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

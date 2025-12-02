@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuario</title>
+</head>
+<body>
+    <%- include("../partials/cabecalhoSemMenu.ejs") %>
+
+    <div class="container">
+
+        <% if (status == "1") { %>
+        
+        <div class="alert alert-danger" alert-dismissible > 
+            <button type="button" class="btn-close" data-bs-dismiss="alert"> </button> 
+            Email e/ou senha  com <b>invalidos!</b>
+        </div>
+     
+    <% } %>
+
+        <h2>Login Usuario</h2>
+
+    <form action="/usuarios/login" method="post">
+        
+        <div>
+            <label  class="form-label"> Email:</label>
+            <input  class="form-control" type="email" name="email" required><br>
+        </div>
+
+        <div>
+            <label class="form-label"> Senha:</label>
+            <input class="form-control" type="password" name="senha" required><br>
+        </div>
+        
+         
+        <br>
+    <div>
+
+        <button type="submit" class="btn btn-success"> Login </button>
+    <a class="btn btn-primary" href="/usuarios/cadastrar">Não tem conta, Cadastrar Usuario</a>
+
+        <%-include ("../partials/rodape.ejs") %>
+    
+</div>
+</body>
+</html>
+        

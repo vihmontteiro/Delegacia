@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Ocorrência</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+
+    <div class="container">
+
+        <h2><%= ocorrencia._id ? "Atualizar" : "Cadastrar" %> Ocorrência</h2>
+
+        <form action="<%= ocorrencia._id ? "/ocorrencias/atualizar" : "/ocorrencias" %>" method="post">
+            
+            <input type="hidden" name="_id" value="<%= ocorrencia._id %>">
+
+            <div>
+                <label>Número:</label>
+                <input class="form-control" type="text" name="numero" value="<%= ocorrencia.numero %>" required>
+            </div>
+
+            <div>
+                <label>Descrição:</label>
+                <input class="form-control" type="text" name="descricao" value="<%= ocorrencia.descricao %>" required>
+            </div>
+
+            <div>
+                <label>Data:</label>
+                <input class="form-control" type="date" name="data" value="<%= ocorrencia.data ? ocorrencia.data.toISOString().slice(0,10) : "" %>" required>
+            </div>
+
+            <div>
+                <label>Local:</label>
+                <input class="form-control" type="text" name="local" value="<%= ocorrencia.local %>" required>
+            </div>
+
+            <br>
+
+            <div>
+                <a href="/" class="btn btn-primary">Voltar</a>
+                <button type="submit" class="btn btn-success">
+                    <%= ocorrencia._id ? "Atualizar" : "Cadastrar" %>
+                </button>
+            </div>
+
+        </form>
+
+        <%- include("../partials/rodape.ejs") %>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Principal</title>
+
+    <%- include("partials/cabecalho.ejs") %>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sistema de Controle</h1>
+
+        <h3><a href="/policiais/cadastrar">Cadastrar Policial</a></h3>
+        <h3><a href="/policiais">Relatório de Policiais</a></h3>
+        
+        <br>
+
+        <h3><a href="/usuarios/cadastrar">Cadastrar Usuario</a></h3>
+        <h3><a href="/usuarios">Relatório de Usuario</a></h3>
+
+        <br>
+
+        <h3><a href="/ocorrencias/cadastrar">Cadastrar Ocorrência</a></h3>
+        <h3><a href="/ocorrencias">Relatório de Ocorrências</a></h3>
+        
+        
+        
+    </div>
+
+    <%- include("partials/rodape.ejs") %>
+</body>
+</html>

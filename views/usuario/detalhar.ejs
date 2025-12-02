@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detalhamento de Usuario</title>
+    
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs") %>
+    <div class="container">
+
+    <% if (usuario != null ) { %>
+        <div> 
+            <b>Registro: </b> <%= usuario.email %>
+        </div>
+        <div>
+            <b>Nome: </b> <%= usuario.nome %>
+        </div>
+        
+
+        <% } else { %>
+            <h2 style="color: red;">Usuario não encontrado!</h2>
+        <% } %>
+
+        <br>
+
+        <a href="/usuarios" class="btn btn-primary"> Voltar</a>
+
+    </div>
+
+    <%-include ("../partials/rodape.ejs") %>
+
+</body>
+</html>
+
