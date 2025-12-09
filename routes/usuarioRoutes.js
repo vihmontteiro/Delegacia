@@ -11,7 +11,7 @@ router.get("/usuarios/:email/atualizar",auth, UsuarioController.atualizar);
 router.post("/usuarios/atualizar",auth, UsuarioController.atualizarPost);
 router.get("/usuarios/login", UsuarioController.loginGet);
 router.post("/usuarios/login", UsuarioController.loginPost);
-router.get("/usuarios/:logout",auth, UsuarioController.logout);
-router.get("/usuarios/:email",auth, UsuarioController.detalhar);
+router.get("/usuarios/logout",auth, UsuarioController.logout);
+router.get("/usuarios/:email", UsuarioController.detalhar);
 
 module.exports = router;
